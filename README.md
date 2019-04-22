@@ -40,7 +40,7 @@ static double Sdist(const CircVal& c1, const CircVal& c2)
 # Angles Mean
 Since the arithmetic mean is not always appropriate for angles, I took the formula of mean circular quantities found in [Wikipedia](https://en.wikipedia.org/wiki/Mean_of_circular_quantities):
 
-<img src="https://latex.codecogs.com/gif.latex?%5Cbar%7B%5Calpha%7D%3D%5Carctan2%5CBigg%28%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Csin%28%5Calpha_j%29%2C+%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Ccos%28%5Calpha_j%29%5CBigg%29">
+<img src="https://latex.codecogs.com/gif.latex?%5Cbar%7B%5Calpha%7D%3D%5Carctan2%5CBigg%28%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Csin%28%5Calpha_j%29%2C%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Ccos%28%5Calpha_j%29%5CBigg%29">
 
 # Pearson's Correlation
 "...
