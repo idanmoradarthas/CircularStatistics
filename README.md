@@ -40,7 +40,7 @@ static double Sdist(const CircVal& c1, const CircVal& c2)
 # Angles Mean
 Since the arithmetic mean is not always appropriate for angles, I took the formula of mean circular quantities found in [Wikipedia](https://en.wikipedia.org/wiki/Mean_of_circular_quantities):
 
-<img src="https://latex.codecogs.com/gif.latex?\bar{\alpha}= \arctan2\Bigg(\cfrac{1}{N}\Sigma^N_{j=1}\sin(\alpha_j), \cfrac{1}{N}\Sigma^N_{j=1}\cos(\alpha_j)\Bigg)">
+<img src="http://www.sciweavers.org/tex2img.php?eq=%5Cbar%7B%5Calpha%7D%3D%20%5Carctan2%5CBigg%28%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Csin%28%5Calpha_j%29%2C%20%5Ccfrac%7B1%7D%7BN%7D%5CSigma%5EN_%7Bj%3D1%7D%5Ccos%28%5Calpha_j%29%5CBigg%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\bar{\alpha}= \arctan2\Bigg(\cfrac{1}{N}\Sigma^N_{j=1}\sin(\alpha_j), \cfrac{1}{N}\Sigma^N_{j=1}\cos(\alpha_j)\Bigg)" width="358" height="47" />
 
 # Pearson's Correlation
 "...
@@ -51,4 +51,4 @@ Jammalamadaka, S. Rao, and Ambar Sengupta. Topics in circular statistics. Vol. 5
 
 the following formula was taken from pages 176-178 of the quoted book above.
 
-<img src="https://latex.codecogs.com/gif.latex?Pearson Circular_{\alpha,\beta} = \cfrac{\Sigma^N_{i=1}\sin(\alpha_i-\bar{\alpha})\sin(\beta_i-\bar{\beta})}{\sqrt{\Sigma^N_{i=1}\sin^2(\alpha_i-\bar{\alpha})\Sigma^N_{i=1}\sin^2(\beta_i-\bar{\beta})}}">
+<img src="http://www.sciweavers.org/tex2img.php?eq=Pearson%20Circular_%7B%5Calpha%2C%5Cbeta%7D%20%3D%20%5Ccfrac%7B%5CSigma%5EN_%7Bi%3D1%7D%5Csin%28%5Calpha_i-%5Cbar%7B%5Calpha%7D%29%5Csin%28%5Cbeta_i-%5Cbar%7B%5Cbeta%7D%29%7D%7B%5Csqrt%7B%5CSigma%5EN_%7Bi%3D1%7D%5Csin%5E2%28%5Calpha_i-%5Cbar%7B%5Calpha%7D%29%5CSigma%5EN_%7Bi%3D1%7D%5Csin%5E2%28%5Cbeta_i-%5Cbar%7B%5Cbeta%7D%29%7D%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="Pearson Circular_{\alpha,\beta} = \cfrac{\Sigma^N_{i=1}\sin(\alpha_i-\bar{\alpha})\sin(\beta_i-\bar{\beta})}{\sqrt{\Sigma^N_{i=1}\sin^2(\alpha_i-\bar{\alpha})\Sigma^N_{i=1}\sin^2(\beta_i-\bar{\beta})}}" width="469" height="58" />
