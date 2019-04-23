@@ -222,7 +222,7 @@ public class CircularStatistics {
    * @param inputRangeX input range of the first collection.
    * @param y second data collection.
    * @param inputRangeY input range of the second collection.
-   * @return Returns Pearson's circular correlation coefficient for the two collections.
+   * @return Pearson's circular correlation coefficient for the two collections.
    */
   public static double computePearsonCircularCorrelation(
       Collection<Double> x,
