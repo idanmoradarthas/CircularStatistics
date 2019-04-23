@@ -1,5 +1,6 @@
 package com.moradi.circularstatistics;
 
+import com.google.common.collect.Lists;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.lang3.tuple.Pair;
@@ -7,6 +8,7 @@ import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -206,5 +208,18 @@ public class CircularStatisticsTest {
         CircularStatistics.computePearsonCircularCorrelation(
             x, Pair.of(-180.0, 180.0), y, Pair.of(0.0, 360.0)),
         0.0001);
+  }
+
+  @Test
+  public void testRadianAvg() {
+    List<Double> radians =
+        Lists.newArrayList(0.0, 0.25 * Math.PI, 0.5 * Math.PI, 0.75 * Math.PI, Math.PI);
+    assertEquals(0.5 * Math.PI, CircularStatistics.radianAnglesAverage(radians), 0.0);
+  }
+
+  @Test
+  public void testDegreeAvg() {
+    ArrayList<Double> degrees = Lists.newArrayList(0.0, 45.0, 90.0, 135.0, 180.0);
+    assertEquals(90, CircularStatistics.degreeAnglesAverage(degrees), 0.0);
   }
 }

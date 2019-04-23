@@ -1,3 +1,27 @@
+/*
+MIT License
+
+Copyright (c) 2019 Idan Morad
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
+
 package com.moradi.circularstatistics;
 
 import com.google.common.base.Preconditions;
@@ -10,12 +34,20 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * This class contains methods for performing statistics operations such as the conversation between
+ * ranges, distance between angles, average and pearson correlation.
+ *
+ * @author Idan Morad
+ * @version 1.0
+ */
 public class CircularStatistics {
   /**
    * Table implements as map of maps that receives two pair of ranges of representations of angles
    * and convert the given value from the range of the first pair to second one.
    *
-   * <p>For example: CONVERSION_TABLE.get(Pair.of(0,360)).get(Pair.of(-180,180)).apply(270) -> -90
+   * <p>For example: CONVERSION_TABLE.get(Pair.of(0,360)).get(Pair.of(-180,180)).apply(270) will
+   * output -90
    *
    * <p>available ranges are:
    *
@@ -159,11 +191,29 @@ public class CircularStatistics {
     return angrad;
   }
 
-  private static double radianAnglesAverage(Collection<Double> angles) {
-    double n = angles.size();
+  /**
+   * Calculates the average between radian angles.
+   *
+   * @param angrads collection of degree angles in range (0, 2π) or (-π, π).
+   * @return the average.
+   */
+  public static double radianAnglesAverage(Collection<Double> angrads) {
+    double n = angrads.size();
     return Math.atan2(
-        (1 / n) * angles.stream().mapToDouble(Math::sin).sum(),
-        (1 / n) * angles.stream().mapToDouble(Math::cos).sum());
+        (1 / n) * angrads.stream().mapToDouble(Math::sin).sum(),
+        (1 / n) * angrads.stream().mapToDouble(Math::cos).sum());
+  }
+
+  /**
+   * Calculates the average between degree angles.
+   *
+   * @param angdegs collection of degree angles in range (0, 360) or (-180, 180).
+   * @return the average.
+   */
+  public static double degreeAnglesAverage(Collection<Double> angdegs) {
+    List<Double> radianAngles = angdegs.stream().map(Math::toRadians).collect(Collectors.toList());
+    double radianAverage = radianAnglesAverage(radianAngles);
+    return Math.toDegrees(radianAverage);
   }
 
   /**
