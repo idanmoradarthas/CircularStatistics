@@ -54,8 +54,8 @@ public class CircularStatistics {
    * <ul>
    *   <li>(0, 360)
    *   <li>(-180, 180)
-   *   <li>(0, 2π)
-   *   <li>(-π, π)
+   *   <li>(0, 2&pi;)
+   *   <li>(-&pi;, &pi;)
    * </ul>
    */
   public static final Map<Pair<Double, Double>, Map<Pair<Double, Double>, Function<Double, Double>>>
@@ -112,7 +112,7 @@ public class CircularStatistics {
    *
    * @param angrad1 the starting angle, in radians.
    * @param angrad2 the ending angle, in radians.
-   * @return the distance in range [-π, π]
+   * @return the distance in range [-&pi;, &pi;]
    */
   public static double angleDistanceRadians(double angrad1, double angrad2) {
     return sDist(angrad1, angrad2, 2 * Math.PI);
@@ -165,10 +165,10 @@ public class CircularStatistics {
   }
 
   /**
-   * converts from range (0, 2π) to (-π, π).
+   * converts from range (0, 2&pi;) to (-&pi;, &pi;).
    *
    * @param angrad angle, in radians.
-   * @return the angle in range (-π, π).
+   * @return the angle in range (-&pi;, &pi;).
    */
   private static double convert2piToPi(double angrad) {
     if (angrad > Math.PI) {
@@ -178,10 +178,10 @@ public class CircularStatistics {
   }
 
   /**
-   * converts from range (-π, π) to (0, 2π).
+   * converts from range (-&pi;, &pi;) to (0, 2&pi;).
    *
    * @param angrad angle, in radians.
-   * @return the angle in range (0, 2π).
+   * @return the angle in range (0, 2&pi;).
    */
   private static double convertPiTo2pi(double angrad) {
     if (angrad < 0) {
@@ -193,7 +193,7 @@ public class CircularStatistics {
   /**
    * Calculates the average between radian angles.
    *
-   * @param angrads collection of degree angles in range (0, 2π) or (-π, π).
+   * @param angrads collection of degree angles in range (0, 2&pi;) or (-&pi;, &pi;).
    * @return the average.
    */
   public static double radianAnglesAverage(Collection<Double> angrads) {
@@ -222,7 +222,7 @@ public class CircularStatistics {
    * @param inputRangeX input range of the first collection.
    * @param y second data collection.
    * @param inputRangeY input range of the second collection.
-   * @return Returns Pearson's circular correlation coefficient for the two collections.
+   * @return Pearson's circular correlation coefficient for the two collections.
    */
   public static double computePearsonCircularCorrelation(
       Collection<Double> x,
