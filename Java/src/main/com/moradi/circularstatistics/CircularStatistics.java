@@ -119,8 +119,7 @@ public class CircularStatistics {
   }
 
   /**
-   * Returns the length of the directed walk from circVal1 to circVal2, with the lowest
-   * absolute-value length as distance. based on
+   * Returns the length of the directed walk from circVal1 to circVal2, with the lowest value length as distance. based on
    * https://www.codeproject.com/Articles/190833/Circular-Values-Math-and-Statistics-with-Cplusplus
    *
    * @param circVal1 the starting circular value.
