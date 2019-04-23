@@ -21,7 +21,7 @@ Jammalamadaka, S. Rao, and Ambar Sengupta. Topics in circular statistics. Vol. 5
 Most of the theory and inspiration for this code was motivated by the quoted book above.
 
 # Distance Between Angles
-Inorder to calculate distance between angles I used and code presented in this work:
+Inorder to calculate distance between angles I used the code presented in this work:
 
 Lior Kogan, “Circular Values Math and Statistics with C++11”. CodeProject, CodeProject, 27 Apr 2013, https://www.codeproject.com/Articles/190833/Circular-Values-Math-and-Statistics-with-Cplusplus 
 
