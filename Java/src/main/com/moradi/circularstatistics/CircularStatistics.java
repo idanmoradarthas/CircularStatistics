@@ -44,7 +44,7 @@ import java.util.stream.Collectors;
 public class CircularStatistics {
   /**
    * Table implements as map of maps that receives two pair of ranges of representations of angles
-   * and convert the given value from the range of the first pair to second one.
+   * and, converts the given value from the range of the first pair to second one.
    *
    * <p>For example: CONVERSION_TABLE.get(Pair.of(0,360)).get(Pair.of(-180,180)).apply(270) will
    * output -90
