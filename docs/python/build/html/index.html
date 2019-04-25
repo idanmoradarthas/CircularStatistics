@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Circular Statistics’s documentation! &#8212; Circular Statistics 1.0 documentation</title>
+    <link href="_static/alabaster.css" rel="stylesheet" type="text/css" />
+    <link href="_static/pygments.css" rel="stylesheet" type="text/css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js" type="text/javascript"></script>
+    <script src="_static/jquery.js" type="text/javascript"></script>
+    <script src="_static/underscore.js" type="text/javascript"></script>
+    <script src="_static/doctools.js" type="text/javascript"></script>
+    <script src="_static/language_data.js" type="text/javascript"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <link href="genindex.html" rel="index" title="Index" />
+    <link href="search.html" rel="search" title="Search" />
+   
+  <link href="_static/custom.css" rel="stylesheet" type="text/css" />
+  
+  
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-circular_statistics">
+<span id="welcome-to-circular-statistics-s-documentation"></span><h1>Welcome to Circular Statistics’s documentation!<a class="headerlink" href="#module-circular_statistics" title="Permalink to this headline">¶</a></h1>
+<p>Circular Statitics  methods for performing statistics operations such as the conversation between ranges, distance
+between angles, average and pearson correlation.</p>
+<dl class="data">
+<dt id="circular_statistics.CONVERSION_TABLE">
+<code class="descclassname">circular_statistics.</code><code class="descname">CONVERSION_TABLE</code><em class="property"> = {(-180, 180): {(-180, 180): &lt;function &lt;lambda&gt;&gt;, (-3.141592653589793, 3.141592653589793): &lt;built-in function radians&gt;, (0, 6.283185307179586): &lt;function &lt;lambda&gt;&gt;, (0, 360): &lt;function _covert_180_to_360&gt;}, (-3.141592653589793, 3.141592653589793): {(-180, 180): &lt;built-in function degrees&gt;, (-3.141592653589793, 3.141592653589793): &lt;function &lt;lambda&gt;&gt;, (0, 6.283185307179586): &lt;function _covert_pi_to_2pi&gt;, (0, 360): &lt;function &lt;lambda&gt;&gt;}, (0, 6.283185307179586): {(-180, 180): &lt;function &lt;lambda&gt;&gt;, (-3.141592653589793, 3.141592653589793): &lt;function _covert_2pi_to_pi&gt;, (0, 6.283185307179586): &lt;function &lt;lambda&gt;&gt;, (0, 360): &lt;built-in function degrees&gt;}, (0, 360): {(-180, 180): &lt;function _covert_360_to_180&gt;, (-3.141592653589793, 3.141592653589793): &lt;function &lt;lambda&gt;&gt;, (0, 6.283185307179586): &lt;built-in function radians&gt;, (0, 360): &lt;function &lt;lambda&gt;&gt;}}</em><a class="headerlink" href="#circular_statistics.CONVERSION_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Table implements as dictionary of dictionaries that receives two tuples of representations of angles, and converts the 
+given value from the range of the first tuple to second one.</p>
+<p>For example: CONVERSION_TABLE[(0,360)][(-180,180)](270) will output -90.</p>
+<dl class="simple">
+<dt>available ranges are:</dt><dd><ul class="simple">
+<li><p>(0, 360)</p></li>
+<li><p>(-180, 180)</p></li>
+<li><p>(0, <span class="math notranslate nohighlight">\(2\pi\)</span>)</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(-\pi\)</span>, <span class="math notranslate nohighlight">\(\pi\)</span>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="circular_statistics.angle_distance_degree">
+<code class="descclassname">circular_statistics.</code><code class="descname">angle_distance_degree</code><span class="sig-paren">(</span><em>deg1: float</em>, <em>deg2: float</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/circular_statistics.html#angle_distance_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#circular_statistics.angle_distance_degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the distance between angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deg1</strong> – the starting angle, in degrees.</p></li>
+<li><p><strong>deg2</strong> – the ending angle, in degrees.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the distance in range [-180, 180]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="circular_statistics.angle_distance_radians">
+<code class="descclassname">circular_statistics.</code><code class="descname">angle_distance_radians</code><span class="sig-paren">(</span><em>rad1: float</em>, <em>rad2: float</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/circular_statistics.html#angle_distance_radians"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#circular_statistics.angle_distance_radians" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the distance between angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rad1</strong> – the starting angle, in radians.</p></li>
+<li><p><strong>rad2</strong> – the ending angle, in radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the distance in range [<span class="math notranslate nohighlight">\(-\pi\)</span> , <span class="math notranslate nohighlight">\(\pi\)</span>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="circular_statistics.compute_pearson_circular_correlation">
+<code class="descclassname">circular_statistics.</code><code class="descname">compute_pearson_circular_correlation</code><span class="sig-paren">(</span><em>x: numpy.ndarray, input_range_x: Union[Tuple[int, int], Tuple[float, float]], y: numpy.ndarray, input_range_y: Union[Tuple[int, int], Tuple[float, float]]</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/circular_statistics.html#compute_pearson_circular_correlation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#circular_statistics.compute_pearson_circular_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes Pearson’s circular product-moment correlation coefficients for pairs of collections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – first array of angles</p></li>
+<li><p><strong>input_range_x</strong> – input range of x</p></li>
+<li><p><strong>y</strong> – second array of angles</p></li>
+<li><p><strong>input_range_y</strong> – input range of y</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pearson’s circular correlation coefficient for the two collections.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="circular_statistics.degrees_angles_average">
+<code class="descclassname">circular_statistics.</code><code class="descname">degrees_angles_average</code><span class="sig-paren">(</span><em>x: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/circular_statistics.html#degrees_angles_average"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#circular_statistics.degrees_angles_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the average between degree angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> – numpy array of degree angles in range (0, 360) or (-180, 180).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the average.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="circular_statistics.radians_angles_average">
+<code class="descclassname">circular_statistics.</code><code class="descname">radians_angles_average</code><span class="sig-paren">(</span><em>x: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/circular_statistics.html#radians_angles_average"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#circular_statistics.radians_angles_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the average between radian angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> – numpy array of degree angles in range (0, <span class="math notranslate nohighlight">\(2\pi\)</span>) or (<span class="math notranslate nohighlight">\(-\pi\)</span>, <span class="math notranslate nohighlight">\(\pi\)</span>).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the average.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div aria-label="main navigation" class="sphinxsidebar" role="navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Circular Statistics</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" role="search" style="display: none">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form action="search.html" class="search" method="get">
+      <input name="q" type="text" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Idan Morad.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

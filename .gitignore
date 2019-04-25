@@ -163,3 +163,5 @@ hs_err_pid*
 /python/python.iml
 /Java/fieldSemantics.iml
 /Java/circularstatistics.iml
+!/docs/python/
+!/docs/python/build/
