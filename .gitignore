@@ -165,4 +165,4 @@ hs_err_pid*
 /Java/circularstatistics.iml
 !/docs/python/
 !/docs/python/build/
-!/Java/com/moradi/circularstatistics/1.0/circularstatistics-1.0.jar
+!/Java/maven-repo/com/moradi/circularstatistics/1.0/circularstatistics-1.0.jar
